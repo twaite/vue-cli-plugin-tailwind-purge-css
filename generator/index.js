@@ -1,4 +1,9 @@
 module.exports = (api, options, rootOptions) => {
+  console.log('Tailwind / Purge CSS plugin is getting installed...')
+  console.log(options)
+  console.log('---')
+  console.log(rootOptions)
+
   // Install Tailwind and Purge CSS packages
   api.extendPackage({
     devDependencies: {
@@ -23,7 +28,7 @@ module.exports = (api, options, rootOptions) => {
 
     // inject import
     const lastImportIndex = lines.findIndex(line => line.match(/^import/))
-    lines[lastImportIndex] += `\n\n// Tailwind\nimport './tailwind/tailwind.css'\n`
+    lines[lastImportIndex] += `\n\n// Tailwind\nimport './tailwind/tailwind.css'`
 
     // modify app
     contentMain = lines.reverse().join('\n')
