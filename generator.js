@@ -8,19 +8,9 @@ module.exports = (api, options, rootOptions) => {
   })
 
   // Render template
-  console.log('Cok yasa')
-  console.log(api.resolve(''))
-  console.log(
-    `${api.resolve('')}/node_modules/tailwindcss/defaultConfig.stub.js`
-  )
-  console.log('--------')
-  api.render(
-    `${api.resolve('')}/node_modules/tailwindcss/defaultConfig.stub.js`
-  )
   api.render('./template')
 
-  // Modify main
-  let importLines = `\nimport './tailwind.css'`
+  // Modify main (.js | .ts)
   api.onCreateComplete(() => {
     // inject to main.js
     const fs = require('fs')
@@ -33,7 +23,7 @@ module.exports = (api, options, rootOptions) => {
 
     // inject import
     const lastImportIndex = lines.findIndex(line => line.match(/^import/))
-    lines[lastImportIndex] += importLines
+    lines[lastImportIndex] += `\n\n// Tailwind\nimport './tailwind/tailwind.css'\n`
 
     // modify app
     contentMain = lines.reverse().join('\n')
