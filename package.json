@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/ti-pa-to/vue-cli-plugin-tailwind-purge-css/issues"
   },
-  "homepage": "https://github.com/ti-pa-to/vue-cli-plugin-tailwind-purge-css#readme"
+  "homepage": "https://github.com/ti-pa-to/vue-cli-plugin-tailwind-purge-css#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "node-emoji": "^1.8.1"
+  }
 }

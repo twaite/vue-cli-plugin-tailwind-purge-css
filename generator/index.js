@@ -1,8 +1,11 @@
+const chalk = require('chalk')
+const emoji = require('node-emoji')
 module.exports = (api, options, rootOptions) => {
-  console.log('Tailwind / Purge CSS plugin is getting installed...')
-  console.log(options)
-  console.log('---')
-  console.log(rootOptions)
+  const postcssHelpers = require('./postcss-helpers')(api)
+
+  console.log(`\n${emoji.get('coffee')}  Thank you for using ${chalk.cyan('Tailwind / Purge CSS Plugin')}`)
+  console.log(`    For questions, issues and recommendations please visit: `)
+  console.log(`    ${chalk.green('https://github.com/ti-pa-to/vue-cli-plugin-tailwind-purge-css')}`)
 
   // Install Tailwind and Purge CSS packages
   api.extendPackage({
@@ -12,8 +15,11 @@ module.exports = (api, options, rootOptions) => {
     }
   })
 
-  // Render template
+  // Render template (before PostCSS manipulations because we need the fresh .postcssrc.js ready at the plugin)
   api.render('./template')
+
+  // Remove existing postcss config
+  postcssHelpers.getPostCSSConfig()
 
   // Modify main (.js | .ts)
   api.onCreateComplete(() => {
