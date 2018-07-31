@@ -3,19 +3,15 @@
   "version": "0.0.2",
   "description": "Vue CLI 3.0 plugin with Tailwind and Purge CSS",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ti-pa-to/vue-cli-plugin-tailwind-purge-css.git"
   },
   "keywords": [
     "Vue",
-    "Vue",
-    "CLI",
+    "Vue CLI Plugin",
     "Tailwind",
-    "Purge"
+    "Purge CSS"
   ],
   "author": "Kemal Yalcinkaya",
   "license": "MIT",
