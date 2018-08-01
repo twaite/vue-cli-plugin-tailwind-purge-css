@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-tailwind-purge-css",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Vue CLI 3.0 plugin with Tailwind and Purge CSS",
   "main": "index.js",
   "repository": {
