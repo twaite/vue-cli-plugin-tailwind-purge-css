@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 const emoji = require('node-emoji')
 module.exports = (api, options, rootOptions) => {
-  const postcssHelpers = require('./postcss-helpers')(api)
+  const postcssHelpers = require('./helpers/postcss-helpers')(api)
 
   console.log(`\n${emoji.get('coffee')}  Thank you for using ${chalk.cyan('Tailwind / Purge CSS Plugin')}`)
   console.log(`    For questions, issues and recommendations please visit: `)
